@@ -172,7 +172,76 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <h2 id="使用hexo搭建自己的博客"><a href="#使用hexo搭建自己的博客" class="headerlink" title="使用hexo搭建自己的博客"></a>使用hexo搭建自己的博客</h2><ul>
+<li><p>准备工作</p>
+<p>安装nodejs和git</p>
+</li>
+<li><p>全局安装hexo脚手架（nodejs的环境变量相关路径假设你已经配置好了）</p>
+<p>安装之前，先设置npm源地址为淘宝镜像，ctrl + r 输入cmd打开命令行窗口，执行以下操作。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">C:\Users\Administrator&gt;npm config set registry https://registry.npmmirror.com</span><br></pre></td></tr></table></figure>
+
+<p>开始下载hexo npm包</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">C:\Users\Administrator&gt;npm install -g hexo-cli</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>初始化hexo（新建一个Blog\hexo目录），在该目录下打开cmd命令窗口执行下面的操作。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">D:\work\Blog\hexo&gt;hexo init</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>启动hexo服务(hexo server)</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">D:\work\Blog\hexo&gt;hexo s</span><br><span class="line">INFO  Validating config</span><br><span class="line">INFO  Start processing</span><br><span class="line">INFO  Hexo is running at http://localhost:4000/ . Press Ctrl+C to stop.</span><br><span class="line">INFO  Good bye</span><br></pre></td></tr></table></figure>
+
+<p>然后浏览器访问<a target="_blank" rel="noopener" href="http://localhost:4000/%EF%BC%8C%E5%B0%B1%E5%8F%AF%E4%BB%A5%E7%9C%8B%E5%88%B0%E8%87%AA%E5%B7%B1%E7%9A%84%E5%8D%9A%E5%AE%A2%E7%B3%BB%E7%BB%9F%E3%80%82">http://localhost:4000/，就可以看到自己的博客系统。</a></p>
+</li>
+<li><p>创建一个博客文件</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">D:\work\Blog\hexo&gt;hexo n &quot;我的第一篇文章&quot;</span><br><span class="line">INFO  Validating config</span><br><span class="line">INFO  Created: D:\work\Blog\hexo\source\_posts\我的第一篇文章.md</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>使用Git Bash窗口命令编辑文件（随便写些内容）</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ vim source/_posts/我的第一篇文章.md</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>清除缓存 ,会删掉根目录下的public文件夹 </p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo clean</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>生成静态网页文件(hexo generate)</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">$ hexo g</span><br><span class="line">INFO  Validating config</span><br><span class="line">INFO  Start processing</span><br><span class="line">INFO  Files loaded in 121 ms</span><br><span class="line">INFO  Generated: archives/index.html</span><br><span class="line">INFO  Generated: archives/2023/index.html</span><br><span class="line">INFO  Generated: archives/2023/04/index.html</span><br><span class="line">INFO  Generated: index.html</span><br><span class="line">INFO  Generated: js/script.js</span><br><span class="line">INFO  Generated: fancybox/jquery.fancybox.min.css</span><br><span class="line">INFO  Generated: css/fonts/FontAwesome.otf</span><br><span class="line">INFO  Generated: css/style.css</span><br><span class="line">INFO  Generated: js/jquery-3.4.1.min.js</span><br><span class="line">INFO  Generated: fancybox/jquery.fancybox.min.js</span><br><span class="line">INFO  Generated: css/fonts/fontawesome-webfont.ttf</span><br><span class="line">INFO  Generated: css/images/banner.jpg</span><br><span class="line">INFO  Generated: css/fonts/fontawesome-webfont.eot</span><br><span class="line">INFO  Generated: css/fonts/fontawesome-webfont.woff</span><br><span class="line">INFO  Generated: 2023/04/18/我的第一篇文章/index.html</span><br><span class="line">INFO  Generated: css/fonts/fontawesome-webfont.woff2</span><br><span class="line">INFO  Generated: css/fonts/fontawesome-webfont.svg</span><br><span class="line">INFO  Generated: 2023/04/18/hello-world/index.html</span><br><span class="line">INFO  18 files generated in 490 ms</span><br></pre></td></tr></table></figure>
+
+<p>重新启动(hexo s)，再次访问<a target="_blank" rel="noopener" href="http://localhost:4000/%EF%BC%8C%E5%B0%B1%E5%8F%AF%E4%BB%A5%E7%9C%8B%E5%88%B0%E5%88%9A%E6%89%8D%E9%82%A3%E7%AF%87%E6%88%91%E7%9A%84%E5%8D%9A%E5%AE%A2%E5%86%85%E5%AE%B9%E4%BA%86%E3%80%82">http://localhost:4000/，就可以看到刚才那篇我的博客内容了。</a></p>
+</li>
+<li><p>部署到远端服务器访问（GitHub）</p>
+<ol>
+<li><p>下载插件</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install --save hexo-deployer-git</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>github新建仓库<br>在自己的github账号上新建一个New repository, repository name命名格式为：你的github账号昵称+.github.io, 然后点击create repository就可以了。</p>
+</li>
+<li><p>配置hexo的_config.yml文件如下</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">deploy:</span><br><span class="line">type: git</span><br><span class="line">## repo的地址为你的刚才创建的仓库地址</span><br><span class="line">repo: https://github.com/QiaoDaKai/QiaoDaKai.github.io.git </span><br><span class="line">branch: master</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>部署到远端服务器github上<br>执行dexo d, 然后就可以公网访问了，地址：你的github账号昵称+.github.io</p>
+</li>
+</ol>
+</li>
+<li><p>更改theme主题样式</p>
+<ol>
+<li><p>这里使用yilia这个主题样式(克隆到themes&#x2F;yilia目录下)</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git clone https://github.com/litten/hexo-theme-yilia.git  themes/yilia</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>修改_config.yml配置文件如下</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">theme: yilia</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>清理hexo缓存</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo clean</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>生成静态网页文件</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo g</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>本地启动访问</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo s</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>部署到远端服务器查看更改的样式</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo d</span><br></pre></td></tr></table></figure></li>
+</ol>
+</li>
+</ul>
+
       
 
       
